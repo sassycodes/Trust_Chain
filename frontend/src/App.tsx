@@ -11,7 +11,7 @@ import Custody from './pages/Custody'
 
 function DesktopNav() {
   const location = useLocation()
-  
+
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/dashboard', label: 'Dashboard' },
@@ -30,13 +30,12 @@ function DesktopNav() {
             <Link
               key={path}
               to={path}
-              className={`relative px-5 py-2 text-sm font-medium rounded-full transition-colors duration-300 z-10 ${
-                isActive ? 'text-[--bg]' : 'text-zinc-400 hover:text-white'
-              }`}
+              className={`relative px-5 py-2 text-sm font-medium rounded-full transition-colors duration-300 z-10 ${isActive ? 'text-[--bg]' : 'text-zinc-400 hover:text-white'
+                }`}
             >
               {label}
               {isActive && (
-                <motion.div 
+                <motion.div
                   layoutId="active-nav-pill"
                   className="absolute inset-0 rounded-full -z-10 shadow-[0_0_15px_rgba(16,185,129,0.4)]"
                   style={{
@@ -80,11 +79,10 @@ function MobileNav() {
 
   return (
     <nav
-      className={`md:hidden sticky top-0 z-50 transition-all duration-300 px-4 py-3 ${
-        scrolled || mobileOpen
+      className={`md:hidden sticky top-0 z-50 transition-all duration-300 px-4 py-3 ${scrolled || mobileOpen
           ? 'bg-[rgba(8,10,15,0.85)] backdrop-blur-xl border-b border-[--border-subtle]'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
@@ -112,9 +110,8 @@ function MobileNav() {
               <Link
                 key={path}
                 to={path}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                  isActive(path) ? 'text-white bg-white/10' : 'text-zinc-400'
-                }`}
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive(path) ? 'text-white bg-white/10' : 'text-zinc-400'
+                  }`}
               >
                 {label}
               </Link>
@@ -145,7 +142,7 @@ function ActionButton() {
     <div className="hidden md:block absolute top-6 right-8 z-50">
       <Link
         to="/upload"
-        className="px-6 py-2.5 text-sm font-semibold rounded-full bg-[--accent] text-white hover:shadow-[0_0_20px_rgba(79,142,255,0.4)] transition-all duration-300 border border-[rgba(255,255,255,0.1)]"
+        className="btn-glow !py-2.5 !px-6 !text-sm !font-bold"
       >
         Analyze Evidence
       </Link>
@@ -160,7 +157,7 @@ function App() {
       <DesktopNav />
       <ActionButton />
       <MobileNav />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-0 md:pt-10">
         <Routes>
           <Route path="/" element={<Landing />} />

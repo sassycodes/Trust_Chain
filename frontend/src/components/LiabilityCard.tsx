@@ -5,9 +5,9 @@ interface LiabilityCardProps {
 }
 
 const PARTY_CONFIG = [
-  { key: 'user', label: 'User', color: 'var(--danger)' },
-  { key: 'platform', label: 'Platform', color: 'var(--accent)' },
-  { key: 'architect', label: 'Architect', color: 'var(--warn)' },
+  { key: 'user', label: 'User', color: '#0F4A1C' },      /* Dark Green */
+  { key: 'platform', label: 'Platform', color: '#1B8A33' },  /* Medium Green */
+  { key: 'architect', label: 'Architect', color: '#39FF14' }, /* Neon Green */
 ]
 
 function formatFactorName(key: string): string {

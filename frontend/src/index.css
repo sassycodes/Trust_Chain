@@ -24,19 +24,19 @@
   --border-light: rgba(255, 255, 255, 0.06);
   --border: rgba(255, 255, 255, 0.12);
 
-  /* Accent (Emerald Cyber Theme) */
-  --accent: #10B981;
-  --accent-glow: rgba(16, 185, 129, 0.25);
-  --accent-dim: rgba(16, 185, 129, 0.1);
+  /* Accent (Neon Green Theme) */
+  --accent: #39FF14;
+  --accent-glow: rgba(57, 255, 20, 0.25);
+  --accent-dim: rgba(57, 255, 20, 0.1);
 
-  /* Status (All remapped to accent to enforce single custom color persona) */
-  --danger: #10B981;
-  --danger-glow: rgba(16, 185, 129, 0.15);
-  --success: #10B981;
-  --success-glow: rgba(16, 185, 129, 0.15);
-  --warn: #10B981;
-  --warn-glow: rgba(16, 185, 129, 0.15);
-  --gold: #10B981;
+  /* Status (Semantic Restored) */
+  --danger: #FF2A55;
+  --danger-glow: rgba(255, 42, 85, 0.15);
+  --success: #39FF14;
+  --success-glow: rgba(57, 255, 20, 0.15);
+  --warn: #FFB020;
+  --warn-glow: rgba(255, 176, 32, 0.15);
+  --gold: #FACC15;
 
   /* Text */
   --text: #EEF0F4;
@@ -44,11 +44,11 @@
   --text-dim: #4A5568;
 
   /* Links */
-  --link: #10B981;
-  --link-hover: #34D399;
+  --link: #39FF14;
+  --link-hover: #66FF4D;
 
   /* Selection */
-  --selection-bg: rgba(16, 185, 129, 0.3);
+  --selection-bg: rgba(57, 255, 20, 0.3);
 }
 
 * {
@@ -361,6 +361,7 @@ body::after {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -371,11 +372,25 @@ body::after {
   animation: enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.animate-enter-d1 { animation-delay: 0.1s; }
-.animate-enter-d2 { animation-delay: 0.2s; }
-.animate-enter-d3 { animation-delay: 0.3s; }
-.animate-enter-d4 { animation-delay: 0.4s; }
-.animate-enter-d5 { animation-delay: 0.5s; }
+.animate-enter-d1 {
+  animation-delay: 0.1s;
+}
+
+.animate-enter-d2 {
+  animation-delay: 0.2s;
+}
+
+.animate-enter-d3 {
+  animation-delay: 0.3s;
+}
+
+.animate-enter-d4 {
+  animation-delay: 0.4s;
+}
+
+.animate-enter-d5 {
+  animation-delay: 0.5s;
+}
 
 /* 3D entry: tilt in from rotateX */
 @keyframes tiltIn {
@@ -383,6 +398,7 @@ body::after {
     opacity: 0;
     transform: perspective(800px) rotateX(20deg) translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: perspective(800px) rotateX(0deg) translateY(0);
@@ -399,6 +415,7 @@ body::after {
     opacity: 0;
     transform: perspective(800px) rotateY(30deg) translateX(60px);
   }
+
   to {
     opacity: 1;
     transform: perspective(800px) rotateY(0deg) translateX(0);
@@ -415,6 +432,7 @@ body::after {
     opacity: 0;
     transform: perspective(600px) scaleY(0.3) translateZ(-40px);
   }
+
   to {
     opacity: 1;
     transform: perspective(600px) scaleY(1) translateZ(0);
@@ -428,8 +446,15 @@ body::after {
 
 /* Slow pulse for badges */
 @keyframes pulse-slow {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
 }
 
 .animate-pulse-slow {
@@ -438,24 +463,33 @@ body::after {
 
 /* Shimmer */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .shimmer-bg {
   background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.03) 50%,
-    transparent 100%
-  );
+      transparent 0%,
+      rgba(255, 255, 255, 0.03) 50%,
+      transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
 
 /* Marching ants for drop zone */
 @keyframes marchingAnts {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -24; }
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -24;
+  }
 }
 
 /* ══════════════════════════════════════════════════
@@ -584,15 +618,35 @@ select.input-dark {
 
 /* Mesh gradient blob animation */
 @keyframes meshFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 15px) scale(0.95); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
 }
 
 @keyframes meshFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-25px, 20px) scale(0.95); }
-  66% { transform: translate(15px, -25px) scale(1.05); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-25px, 20px) scale(0.95);
+  }
+
+  66% {
+    transform: translate(15px, -25px) scale(1.05);
+  }
 }
 
 .mesh-blob-1 {
@@ -633,6 +687,7 @@ select.input-dark {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   .animate-enter,
   .animate-tilt-in,
   .animate-flip-in,
